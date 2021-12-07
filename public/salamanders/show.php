@@ -4,6 +4,8 @@ require_once('../../private/initialize.php');
 // $id = isset($_GET['id']) ? $_GET['id'] : '1';
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
 
+$salamander = mysqli_fetch_assoc($result);
+
 $page_title = 'View Salamander';
 include(SHARED_PATH . '/salamanderHeader.php'); 
 ?>
