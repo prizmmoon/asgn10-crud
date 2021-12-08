@@ -10,6 +10,7 @@ $result = mysqli_query($db, $sql);
 confirm_result_set($result);
 
 $salamander = mysqli_fetch_assoc($result);
+mysqli_free_result($result);
 
 $page_title = 'View Salamander';
 include(SHARED_PATH . '/salamanderHeader.php'); 
