@@ -17,5 +17,5 @@ function find_salamander_by_id($id) {
     confirm_result_set($result);
     $salamander = mysqli_fetch_assoc($result);
     mysqli_free_result($result);
-    return $result; // returns an assoc. array
+    return $salamander; // returns an assoc. array
 }

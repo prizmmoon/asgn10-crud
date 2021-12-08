@@ -4,7 +4,7 @@ require_once('../../private/initialize.php');
 // $id = isset($_GET['id']) ? $_GET['id'] : '1';
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
 
-$subject = find_salamander_by_id($id);
+$salamander = find_salamander_by_id($id);
 
 $page_title = 'View Salamander';
 include(SHARED_PATH . '/salamanderHeader.php'); 
