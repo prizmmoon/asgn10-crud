@@ -4,6 +4,11 @@ require_once('../../private/initialize.php');
 // $id = isset($_GET['id']) ? $_GET['id'] : '1';
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
 
+$sql = "SELECT * FROM salamander ";
+$sql .= "WHERE id='" . $id . "'";
+$result = mysqli_query($db, $sql);
+confirm_result_set($result);
+
 $salamander = mysqli_fetch_assoc($result);
 
 $page_title = 'View Salamander';
