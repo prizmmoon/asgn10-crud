@@ -20,15 +20,15 @@ function find_salamander_by_id($id) {
     return $salamander; // returns an assoc. array
 }
 
-function insert_salamander($salamanderName, $salamanderHabitat, $salamanderDescription) {
+function insert_salamander($name, $habitat, $description) {
     global $db;
 
     $sql = "INSERT INTO salamander ";
-    $sql .= "(salamanderName, salamanderHabitat, salamanderDescription) ";
+    $sql .= "(name, habitat, description) ";
     $sql .= "VALUES (";
-    $sql .= "'" . $salamanderName . "',";
-    $sql .= "'" . $salamanderHabitat . "',";
-    $sql .= "'" . $salamanderDescription . "'";
+    $sql .= "'" . $name . "',";
+    $sql .= "'" . $habitat . "',";
+    $sql .= "'" . $description . "'";
     $sql .= ")";
     $result = mysqli_query($db, $sql);
     // For INSERT statements, $result is true/false

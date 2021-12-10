@@ -4,20 +4,22 @@ if(!isset($_GET['id'])) {
   redirect_to(url_for('/staff/subjects/index.php'));
 }
 $id = $_GET['id'];
-$salamanderName = '';
-$position = '';
-$visible = '';  
+$name = '';
+$habitat = '';
+$description = '';  
 
 if(is_post_request()) {
 
   // Handle form values sent by new.php
 
-  $menu_name = $_POST['salamanderName'] ?? '';
-  $position = $_POST['position'] ?? '';
-  $visible = $_POST['visible'] ?? '';
+  $name = $_POST['name'] ?? '';
+  $habitat = $_POST['habitat'] ?? '';
+  $description = $_POST['description'] ?? '';
 
   echo "Form parameters<br />";
-  echo "Salamander name: " . $salamanderName . "<br />";
+  echo "Salamander name: " . $name . "<br />";
+  echo "Salamander habitat: " . $habitat . "<br />";
+  echo "Salamander description: " . $description . "<br />";
 }
 
 ?>
@@ -33,7 +35,7 @@ if(is_post_request()) {
     <form action="<?= url_for('salamanders/edit.php?id=' . h(u($id))); ?>" method="post">
       <dl>
         <dt>Name</dt>
-        <dd><input type="text" name="salamanderName" value="" /></dd>
+        <dd><input type="text" name="name" value="" /></dd>
       </dl>
       
         <input type="submit" value="Edit Salamander" />
