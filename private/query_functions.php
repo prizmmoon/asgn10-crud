@@ -33,12 +33,12 @@ function insert_salamander($name, $habitat, $description) {
     $result = mysqli_query($db, $sql);
     // For INSERT statements, $result is true/false
     if($result) {
-        return true;
+        redirect_to(url_for('/salamanders'));
     }
     else {
       // INSERT failed
       echo mysqli_error($db);
       db_disconnect($db);
-      exit;
+      exit();
     }
 }
